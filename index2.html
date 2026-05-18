@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portofolio Poster & Logo</title>
+  <style>
+    :root {
+      --bg: #07101f;
+      --surface: rgba(12, 23, 41, 0.88);
+      --surface-soft: rgba(12, 23, 41, 0.6);
+      --text: #edf2ff;
+      --muted: #9ca3af;
+      --accent: #7c3aed;
+      --border: rgba(255,255,255,0.12);
+      --shadow: 0 32px 80px rgba(0,0,0,0.32);
+      --radius: 32px;
+      font-family: Inter, system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: radial-gradient(circle at 20% 10%, rgba(124,58,237,0.16), transparent 22%),
+                  radial-gradient(circle at 85% 0%, rgba(14,165,233,0.14), transparent 18%),
+                  linear-gradient(180deg, #101a2b 0%, #07101f 60%, #04070f 100%);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px);
+      background-size: 96px 96px;
+      opacity: 0.08;
+      pointer-events: none;
+    }
+    a { color: inherit; text-decoration: none; }
+    .page {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 24px 0 40px;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+      padding: 0 12px;
+    }
+    .brand {
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      color: #dbeafe;
+      font-weight: 700;
+    }
+    nav { display: flex; gap: 22px; flex-wrap: wrap; }
+    nav a { color: #cbd5e1; font-size: 0.95rem; transition: color 0.2s ease; }
+    nav a:hover { color: var(--accent); }
+    .hero {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 20px;
+      align-items: center;
+      margin-bottom: 22px;
+      padding: 0 12px;
+    }
+    .panel {
+      position: relative;
+      border-radius: var(--radius);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(12px);
+    }
+    .panel::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(255,255,255,0.04), transparent 40%);
+      pointer-events: none;
+    }
+    .hero-copy {
+      padding: 32px 28px;
+    }
+    .hero-copy h1 {
+      margin: 0;
+      font-size: clamp(2.6rem, 4vw, 3.8rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .typing-text {
+      margin: 24px 0 0;
+      color: #cbd5e1;
+      max-width: 640px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      min-height: 2.5rem;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .typing-cursor {
+      display: inline-block;
+      margin-left: 4px;
+      color: var(--accent);
+      animation: blink 1.1s step-start infinite;
+    }
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+    .hero-copy p {
+      margin: 18px 0 0;
+      color: #cbd5e1;
+      max-width: 640px;
+      font-size: 1.05rem;
+      line-height: 1.8;
+    }
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-top: 36px;
+    }
+    .pill {
+      padding: 14px 22px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: #edf2ff;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+      transition: all 0.2s ease;
+    }
+    .pill:hover {
+      background: rgba(255,255,255,0.08);
+      transform: translateY(-2px);
+    }
+    .screen-card {
+      padding: 28px;
+      display: grid;
+      gap: 20px;
+    }
+    .floating-screen {
+      position: relative;
+      border-radius: 32px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.24);
+      transform: translateY(-4px);
+      transition: transform 0.24s ease, box-shadow 0.24s ease;
+      min-height: 360px;
+    }
+    .floating-screen:hover { transform: translateY(-12px); box-shadow: 0 50px 100px rgba(0,0,0,0.32); }
+    .floating-screen img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .info-grid {
+      display: grid;
+       gap: 24px;
+       grid-template-columns: repeat(2, 1fr);
+       margin: 54px 0 0;
+       padding: 0 12px;
+    }
+    .info-card {
+      padding: 32px;
+      border-radius: var(--radius);
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      box-shadow: 0 32px 80px rgba(0,0,0,0.22);
+      backdrop-filter: blur(14px);
+    }
+    .info-card h2 {
+      margin: 0 0 24px;
+      font-size: 1.35rem;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    .info-card ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .info-card li {
+      margin: 0 0 14px;
+      padding-left: 28px;
+      position: relative;
+      color: #cbd5e1;
+      font-size: 1rem;
+      line-height: 1.8;
+    }
+    .info-card li:last-child {
+      margin-bottom: 0;
+    }
+    .info-card li::before {
+      content: '✓';
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 1.1rem;
+    }
+    .poster-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      margin: 12px 12px 0;
+    }
+    .poster-card {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.08);
+      box-shadow: 0 32px 80px rgba(0,0,0,0.22);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+    .poster-card:hover { transform: translateY(-8px); box-shadow: 0 40px 95px rgba(0,0,0,0.28); }
+    .poster-card img { width: 100%; height: 260px; object-fit: cover; display: block; }
+    .poster-card .content { padding: 26px; }
+    .poster-card h3 { margin: 0 0 12px; font-size: 1.18rem; letter-spacing: -0.01em; }
+    .poster-card p { margin: 0; color: #cbd5e1; font-size: 0.98rem; line-height: 1.8; }
+    .logo-section {
+      margin: 44px 16px 0;
+      display: grid;
+      gap: 24px;
+      grid-template-columns: 1.2fr 0.8fr;
+      align-items: center;
+    }
+    .logo-panel {
+      padding: 36px;
+      border-radius: var(--radius);
+      background: var(--surface-soft);
+      border: 1px solid var(--border);
+      box-shadow: 0 32px 80px rgba(0,0,0,0.22);
+      backdrop-filter: blur(14px);
+    }
+    .logo-panel h2 { margin: 0 0 16px; font-size: 1.35rem; letter-spacing: -0.01em; }
+    .logo-panel p { margin: 0; color: #cbd5e1; line-height: 1.8; font-size: 1rem; }
+    .logo-frame {
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.12);
+      box-shadow: 0 32px 90px rgba(0,0,0,0.28);
+    }
+    .logo-frame img { width: 100%; display: block; object-fit: contain; }
+    .footer {
+      margin: 48px 12px 0;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.96rem;
+      padding: 32px 0;
+      line-height: 1.6;
+    }
+    main img {
+      cursor: zoom-in;
+      transition: transform 0.2s ease;
+    }
+    main img:hover {
+      transform: scale(1.02);
+    }
+    .modal {
+      position: fixed;
+      inset: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background: rgba(0,0,0,0.88);
+      z-index: 9999;
+      padding: 16px;
+      overflow: hidden;
+    }
+    .modal.open {
+      display: flex;
+    }
+    .modal-content {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      max-width: min(100%, calc(100vw - 32px));
+      max-height: min(100%, calc(100vh - 32px));
+      width: min(100%, calc(100vw - 32px));
+      height: min(100%, calc(100vh - 32px));
+    }
+    .modal-content img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      max-height: 100%;
+      border-radius: 24px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.45);
+      display: block;
+    }
+    .modal-close {
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(15,23,42,0.94);
+      color: #fff;
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 16px 36px rgba(0,0,0,0.35);
+    }
+    .modal-close:hover {
+      background: rgba(124,58,237,0.9);
+    }
+    @media (max-width: 980px) {
+      .hero { grid-template-columns: 1fr; }
+      .info-grid, .logo-section { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 680px) {
+      header { flex-direction: column; align-items: flex-start; }
+      .page { padding: 20px 0 32px; }
+      .poster-card img { height: 220px; }
+      .floating-screen { min-height: 320px; }
+      .hero-copy { padding: 28px 24px; }
+      .hero-stack { padding: 0; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div class="brand">PORTFOLIO</div>
+      <nav>
+        <a href="#overview">Overview</a>
+        <a href="#posters">Poster</a>
+        <a href="#logo">Logo</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <div class="panel hero-copy">
+        <h1>Desain Poster & Logo</h1>
+        <p class="typing-text"><span id="typed-text"></span><span class="typing-cursor">|</span></p>
+        <p>Halaman ini menampilkan koleksi poster dan logo Anda dengan tampilan modern, panel transparan, dan tekstur layar mengambang.</p>
+        <div class="hero-meta">
+          <span class="pill">6 Poster</span>
+          <span class="pill">1 Logo</span>
+        </div>
+      </div>
+
+      <div class="panel screen-card floating-screen">
+        <img src="assets/images/poster.jpeg" alt="Tampilan poster mengambang" />
+      </div>
+    </section>
+
+    <section id="overview" class="info-grid">
+      <div class="info-card">
+        <h2>Visual Jelas</h2>
+        <p>Desain dibuat ringkas dan bersih, dengan pesan yang mudah dipahami serta fokus visual yang jelas.</p>
+      </div>
+      <div class="info-card">
+        <h2>Layout Mengambang</h2>
+        <p>Setiap panel tampil seakan melayang di atas latar belakang, memberi kesan portofolio digital profesional.</p>
+      </div>
+    </section>
+
+    <section id="posters" class="section">
+      <div class="poster-grid">
+        <article class="poster-card">
+          <img src="assets/images/poster1.jpeg" alt="Poster 1" />
+          <div class="content">
+            <h3>Poster 1</h3>
+            <p>Tampilan berani untuk promosi event yang menarik perhatian dalam satu detik.</p>
+          </div>
+        </article>
+        <article class="poster-card">
+          <img src="assets/images/poster2.jpeg" alt="Poster 2" />
+          <div class="content">
+            <h3>Poster 2</h3>
+            <p>Struktur rapi untuk branding dan komunikasi visual yang profesional.</p>
+          </div>
+        </article>
+        <article class="poster-card">
+          <img src="assets/images/poster3.jpeg" alt="Poster 3" />
+          <div class="content">
+            <h3>Poster 3</h3>
+            <p>Desain edukatif dengan ruang visual nyaman dan teks mudah dibaca.</p>
+          </div>
+        </article>
+        <article class="poster-card">
+          <img src="assets/images/poster4.jpeg" alt="Poster 4" />
+          <div class="content">
+            <h3>Poster 4</h3>
+            <p>Fokus pada penawaran produk dengan warna kontras dan layout modern.</p>
+          </div>
+        </article>
+        <article class="poster-card">
+          <img src="assets/images/poster5.jpeg" alt="Poster 5" />
+          <div class="content">
+            <h3>Poster 5</h3>
+            <p>Nuansa komunitas yang hangat dan visual mudah dicerna.</p>
+          </div>
+        </article>
+        <article class="poster-card">
+          <img src="assets/images/poster7.jpeg" alt="Poster 6" />
+          <div class="content">
+            <h3>Poster 6</h3>
+            <p>Estetika portofolio premium dengan detail visual yang halus.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="logo" class="logo-section">
+      <div>
+        <h2 style="font-size: 1.8rem; font-weight: 700; margin: 0 0 28px; letter-spacing: -0.02em;">Logo Profesional</h2>
+        <div class="logo-panel">
+          <p>Logo ini dirancang untuk memperkuat identitas visual dengan gaya sederhana, modern, dan mudah dikenali di berbagai media.</p>
+        </div>
+      </div>
+      <div class="logo-frame">
+        <img src="assets/images/poster6.jpeg" alt="Logo presentasi" />
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>Halaman ini menampilkan desain Anda dalam format portofolio yang rapi, ringkas, dan profesional.</p>
+      <p><a class="back-link" href="index4.html">← Kembali ke Halaman Utama</a></p>
+    </footer>
+  </main>
+
+  <div class="modal" id="imageModal" aria-hidden="true">
+    <div class="modal-content">
+      <button class="modal-close" id="modalClose" aria-label="Tutup tampilan gambar">×</button>
+      <img id="modalImage" src="" alt="Gambar diperbesar" />
+    </div>
+  </div>
+
+  <script>
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    const modalClose = document.getElementById('modalClose');
+
+    const openImageModal = (src, alt) => {
+      modalImage.src = src;
+      modalImage.alt = alt || 'Gambar diperbesar';
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+
+    const closeImageModal = () => {
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+      modalImage.src = '';
+    };
+
+    document.querySelectorAll('main img').forEach(img => {
+      img.addEventListener('click', () => openImageModal(img.src, img.alt));
+    });
+
+    modalClose.addEventListener('click', closeImageModal);
+    modal.addEventListener('click', event => {
+      if (event.target === modal) {
+        closeImageModal();
+      }
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && modal.classList.contains('open')) {
+        closeImageModal();
+      }
+    });
+
+    const typedText = document.getElementById('typed-text');
+    const typeMessages = [
+      'Koleksi poster yang kuat dan berkelas',
+      'Logo modern dengan tampilan tegas',
+      'Desain visual profesional untuk branding Anda'
+    ];
+    let typeIndex = 0;
+    let charIndex = 0;
+    const typingSpeed = 80;
+    const erasingSpeed = 40;
+    const pauseDelay = 1700;
+
+    function typeWriter() {
+      if (!typedText) return;
+      const currentText = typeMessages[typeIndex];
+      if (charIndex < currentText.length) {
+        typedText.textContent += currentText.charAt(charIndex);
+        charIndex++;
+        setTimeout(typeWriter, typingSpeed);
+      } else {
+        setTimeout(eraseWriter, pauseDelay);
+      }
+    }
+
+    function eraseWriter() {
+      if (!typedText) return;
+      if (charIndex > 0) {
+        typedText.textContent = typedText.textContent.slice(0, -1);
+        charIndex--;
+        setTimeout(eraseWriter, erasingSpeed);
+      } else {
+        typeIndex = (typeIndex + 1) % typeMessages.length;
+        setTimeout(typeWriter, 500);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      if (typedText) {
+        setTimeout(typeWriter, 600);
+      }
+    });
+  </script>
+</body>
+</html>

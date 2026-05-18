@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio Pribadi - Susanto Yap</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        .typing-text {
+            min-height: 2.2rem;
+            color: rgba(255,255,255,0.92);
+            font-size: 1.1rem;
+            letter-spacing: 0.02em;
+        }
+        .typing-cursor {
+            display: inline-block;
+            margin-left: 6px;
+            color: #e0f2fe;
+            opacity: 0;
+            animation: blink 1.1s steps(2, start) infinite;
+        }
+        .typing-cursor.active {
+            opacity: 1;
+        }
+        @keyframes blink {
+            50% { opacity: 0; }
+        }
+        .hero-title {
+            opacity: 0;
+            transform: translateY(-12px);
+            animation: heroFadeIn 0.7s ease-out 0.2s forwards;
+        }
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-12px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Hero Section -->
+    <section id="hero" class="bg-gradient-to-r from-blue-900 to-blue-700 text-white py-20">
+        <div class="container mx-auto px-25 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0 flex justify-center">
+                <img src="assets/images/gambar.jpeg" alt="Foto Profil" class="w-56 h-56 md:w-64 md:h-64 rounded-full mx-auto object-cover border-4 border-white shadow-lg">
+            </div>
+            <div class="md:w-1/2 text-left -ml-10">
+                <h1 class="hero-title text-4xl md:text-5xl font-bold mb-4">Susanto Yap</h1>
+                <p class="typing-text text-xl mb-6"><span id="typed-quote"></span><span class="typing-cursor"></span></p>
+                <p class="typing-text mb-8"><span id="typed-text"></span><span class="typing-cursor"></span></p>
+                <p class="typing-text mb-8"><span id="typed-description"></span><span class="typing-cursor"></span></p>
+                <div class="space-x-4">
+                    <a href="#contact" class="bg-white text-blue-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition duration-300">Hubungi Saya</a>
+                    <a href="#projects" class="border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-blue-900 transition duration-300">Lihat Portofolio</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" data-animate="fade" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Tentang Saya</h2>
+            <div class="max-w-3xl mx-auto text-lg leading-relaxed">
+                <p class="mb-6">Saya merupakan individu yang memiliki semangat belajar tinggi dan selalu berusaha untuk berkembang di berbagai bidang. Dengan pengalaman mengikuti diklat bahasa Mandarin dan organisasi OSIS, saya telah meningkatkan kemampuan komunikasi dan disiplin belajar saya.</p>
+                <p class="mb-6">Minat saya di bidang teknologi, desain, dan pengembangan diri mendorong saya untuk terus belajar hal baru, termasuk pembuatan website dan desain poster. Saya mudah beradaptasi dengan lingkungan baru dan mampu bekerja secara individu maupun dalam tim.</p>
+                <p>Saya memiliki kemampuan komunikasi yang baik, mampu membangun relasi dan jaringan, serta memiliki tanggung jawab serta etika kerja yang tinggi. Saya siap untuk berkontribusi dan berkembang bersama perusahaan Anda.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" data-animate="fade" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Keahlian</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <i class="fas fa-file-word text-blue-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Microsoft Word</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-blue-600 h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <i class="fas fa-file-excel text-green-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Microsoft Excel</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-green-600 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <i class="fas fa-file-powerpoint text-orange-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Microsoft PowerPoint</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-orange-600 h-2 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <i class="fas fa-palette text-purple-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Desain Poster</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-purple-600 h-2 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <i class="fas fa-code text-red-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Pembuatan Website</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-red-600 h-2 rounded-full" style="width: 70%"></div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <i class="fas fa-language text-teal-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Bahasa Mandarin Dasar</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-teal-600 h-2 rounded-full" style="width: 65%"></div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <i class="fas fa-users text-indigo-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Komunikasi Tim</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-indigo-600 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <i class="fas fa-microphone text-pink-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Public Speaking</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-pink-600 h-2 rounded-full" style="width: 75%"></div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <i class="fas fa-network-wired text-cyan-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Networking</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-cyan-600 h-2 rounded-full" style="width: 80%"></div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <i class="fas fa-brain text-yellow-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Problem Solving</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-yellow-600 h-2 rounded-full" style="width: 85%"></div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <i class="fas fa-clock text-gray-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Manajemen Waktu</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-gray-600 h-2 rounded-full" style="width: 90%"></div>
+                    </div>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition duration-300">
+                    <i class="fas fa-handshake text-emerald-600 text-3xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Kerja Sama Tim</h3>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-emerald-600 h-2 rounded-full" style="width: 88%"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" data-animate="fade" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Pengalaman dan Organisasi</h2>
+            <div class="max-w-4xl mx-auto">
+                <div class="timeline">
+                    <div class="timeline-item" data-animate="fade">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="text-xl font-semibold">Organisasi OSIS</h3>
+                            <p class="text-gray-600 mb-2">Sekolah Menengah Kejuruan</p>
+                            <p>Pernah bergabung dalam organisasi sekolah (OSIS) di mana saya belajar tentang kepemimpinan, komunikasi, dan tanggung jawab. Saya membantu dalam koordinasi acara sekolah dan bekerja sama dalam tim untuk mencapai tujuan bersama.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-animate="fade">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <h3 class="text-xl font-semibold">Diklat Bahasa Mandarin</h3>
+                            <p class="text-gray-600 mb-2">Kursus Bahasa</p>
+                            <p>Mengikuti pembelajaran bahasa Mandarin yang meningkatkan kemampuan komunikasi dan disiplin belajar saya. Pengalaman ini juga membuka minat saya terhadap budaya dan bahasa asing, yang berguna dalam membangun relasi internasional.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" data-animate="fade" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Project Portofolio</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 project-card" data-animate="fade" data-fullsrc="assets/images/web.png" data-slideshow="web">
+                    <div class="bg-white p-6 rounded-xl shadow-md flex flex-col">
+                    <img src="assets/images/web.png" alt="Project Website" class="project-image w-full h-48 object-cover cursor-pointer" data-fullsrc="assets/images/web.png">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Project Website</h3>
+                        <p class="text-gray-600 mb-4">Pernah membuat website sederhana sebagai bagian dari pembelajaran teknologi. Fokus pada desain tampilan yang rapi dan pengalaman pengguna menggunakan HTML, CSS, dan JavaScript.</p>
+                        <p class="text-sm text-gray-500 mb-4">Klik untuk melihat 3 tampilan website.</p>
+                        <a href="index.html" target="_blank" class="project-link bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300 mt-auto">Lihat Project</a>
+                    </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300 project-card" data-animate="fade" data-fullsrc="assets/images/poster.jpeg" data-slideshow="poster">
+                    <div class="bg-white p-6 rounded-xl shadow-md flex flex-col">
+                    <img src="assets/images/poster.jpeg" alt="Desain Poster Film" class="project-image w-full h-48 object-cover cursor-pointer" data-fullsrc="assets/images/poster.jpeg">
+                    <div class="p-6">
+                        <h3 class="text-xl font-semibold mb-2">Desain Poster dan Logo</h3>
+                        <p class="text-gray-600 mb-4">Pernah membuat desain poster film kreatif dengan fokus pada penyampaian pesan visual yang menarik. Menggunakan kemampuan visual dan kreativitas dalam penyusunan komposisi desain.</p>
+                        <p class="text-sm text-gray-500 mb-4">Klik untuk melihat 7 tampilan poster.</p>
+                        <a href="index2.html" class="project-link bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition duration-300 mt-auto" data-fullsrc="assets/images/poster.jpeg">Lihat Project</a>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Values Section -->
+    <section id="values" data-animate="fade" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Nilai Tambah Diri</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="text-center">
+                    <i class="fas fa-rocket text-blue-600 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Cepat Belajar</h3>
+                    <p>Mampu menguasai hal baru dengan cepat dan efisien.</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-shield-alt text-green-600 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Disiplin & Bertanggung Jawab</h3>
+                    <p>Memiliki komitmen tinggi terhadap tugas dan tanggung jawab.</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-cogs text-orange-600 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Adaptif</h3>
+                    <p>Mudah menyesuaikan diri dengan lingkungan dan situasi baru.</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-comments text-purple-600 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Komunikasi Baik</h3>
+                    <p>Mampu berkomunikasi efektif dengan berbagai pihak.</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-users-cog text-red-600 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Kerja Sama Tim</h3>
+                    <p>Berpengalaman dalam kolaborasi tim untuk mencapai tujuan bersama.</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-lightbulb text-yellow-600 text-4xl mb-4"></i>
+                    <h3 class="text-xl font-semibold mb-2">Semangat Berkembang</h3>
+                    <p>Selalu termotivasi untuk terus belajar dan berkembang.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" data-animate="fade" class="py-20 bg-gray-100">
+        <div class="container mx-auto px-4 text-center">
+            <blockquote class="text-2xl italic text-gray-700 max-w-2xl mx-auto">
+                "Kesuksesan dimulai dari keberanian untuk terus belajar dan berkembang."
+            </blockquote>
+            <p class="mt-4 text-gray-600">- Susanto Yap</p>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" data-animate="fade" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Kontak</h2>
+            <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Informasi Kontak</h3>
+                    <div class="space-y-4">
+                        <p><i class="fas fa-envelope text-blue-600 mr-2"></i> susanto.yap25@gmail.com</p>
+                        <p><i class="fas fa-phone text-blue-600 mr-2"></i> +62-852-4058-4825</p>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold mb-4">Kirim Pesan</h3>
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Nama" class="w-full p-3 border border-gray-300 rounded-lg">
+                        <input type="email" placeholder="Email" class="w-full p-3 border border-gray-300 rounded-lg">
+                        <textarea placeholder="Pesan" rows="4" class="w-full p-3 border border-gray-300 rounded-lg"></textarea>
+                        <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition duration-300">Kirim</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Susanto Yap. All rights reserved.</p>
+            <div class="mt-4 space-x-4">
+                <a href="index2.html" class="hover:text-gray-300"><i class="fab fa-linkedin"></i></a>
+                <a href="index2.html" class="hover:text-gray-300"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p class="mt-4 italic">"Berkembanglah setiap hari untuk mencapai impian."</p>
+        </div>
+    </footer>
+
+    <div id="project-lightbox" class="fixed inset-0 hidden items-center justify-center bg-black/80 z-50 p-2 md:p-4">
+        <div class="relative max-w-4xl w-full max-h-[90vh] bg-white rounded-lg shadow-2xl overflow-hidden">
+            <!-- Close Button -->
+            <button id="lightbox-close" class="absolute top-2 right-2 text-gray-600 bg-white rounded-full w-8 h-8 flex items-center justify-center text-xl hover:bg-gray-100 z-10 shadow-md">&times;</button>
+            
+            <!-- Previous Button -->
+            <button id="lightbox-prev" class="absolute left-2 top-1/2 -translate-y-1/2 text-white bg-black/40 rounded-full w-10 h-10 flex items-center justify-center text-xl hover:bg-black/60 z-10 shadow-md transition duration-300 hover:scale-110">❮</button>
+            
+            <!-- Image -->
+            <img id="lightbox-image" src="assets/images/web.png" alt="Slideshow Image 1" class="w-full h-auto max-h-[85vh] object-contain rounded-lg fade-out">
+            
+            <!-- Next Button -->
+            <button id="lightbox-next" class="absolute right-2 top-1/2 -translate-y-1/2 text-white bg-black/40 rounded-full w-10 h-10 flex items-center justify-center text-xl hover:bg-black/60 z-10 shadow-md transition duration-300 hover:scale-110">❯</button>
+            
+            <!-- Slide Indicator -->
+            <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-10">
+                <span id="slide-counter" class="text-white text-sm bg-black/50 px-3 py-1 rounded-full">1 / 4</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        const typingLines = [
+            { id: 'typed-quote', text: '"Adaptif, kreatif, dan siap berkembang dengan kemampuan komunikasi dan desain."' },
+            { id: 'typed-text', text: 'Membangun website yang responsif dan mudah digunakan.' },
+            { id: 'typed-description', text: 'Saya adalah profesional muda yang mudah beradaptasi, memiliki semangat belajar tinggi, dan siap berkontribusi dengan kemampuan Microsoft Office, desain, dan pembuatan website.' }
+        ];
+        const typingSpeed = 50;
+        const linePause = 700;
+
+        function typeLine(index) {
+            const line = typingLines[index];
+            const element = document.getElementById(line.id);
+            const cursor = element?.nextElementSibling;
+            if (!element) return;
+            let char = 0;
+
+            function typeChar() {
+                if (cursor) cursor.classList.add('active');
+                if (char < line.text.length) {
+                    element.textContent += line.text.charAt(char);
+                    char += 1;
+                    setTimeout(typeChar, typingSpeed);
+                } else {
+                    if (cursor) cursor.classList.remove('active');
+                    if (index + 1 < typingLines.length) {
+                        setTimeout(() => typeLine(index + 1), linePause);
+                    }
+                }
+            }
+
+            typeChar();
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setTimeout(() => typeLine(0), 600);
+        });
+    </script>
+</body>
+</html>
